@@ -72,6 +72,7 @@ button{
 .header__mypage{
     background-image: url(/Juhee-Hwang/1_velog-clone/assets/icons/chevron-down.svg);
     width: 24px;
+    height: 24px;
 }
 
 .nav{
