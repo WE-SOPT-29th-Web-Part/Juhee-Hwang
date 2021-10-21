@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 50vh;
+    /* 100 viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+    /* list 스타일에 있는 점을 없앤다 */
+}
+
+button{
+    cursor: pointer;
+    border: 0; 
+    /* border-style 테두리 모양을 정하는 속성 */
+    background-color: whitesmoke;
+}
+
+.header{
+    height: 50px;
+    font-size: 32px;
+    color: white;
+    background-color: pink;
+}
+
+.header__logo{
+    font-size: 32px;
+    text-align: center;
+    /* 수평 정렬 방법 */
+    height: 50px;
+    line-height: 50px;
+}
+
+.options{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.options__btn {
+    background-color: gray;
+    border: 0;
+    color: white;
+    cursor: pointer;
+}
+
+/* flex-container */
+.todos {
+    background-color: whitesmoke;
+    display: flex;
+    flex-grow: 1;
+    /* flex-grow가 1이다 = 남은 공간을 모두 차지한다 */
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* todos__today, todos__tomorrow -> flex-items */
+
+
+.todos__today,
+.todos__tomorrow{
+    border-right: 1px solid darkgray;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;  */
+    /* justify 정렬 : 수직졍렬 */
+    align-items: center;
+     /* align 정렬 : 수평정렬 */
+}
+
+.todos__items{
+    flex-grow: 1;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.todos__item{
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    height: 36px;
+    /* 수평방향으로 사이 공간을 띄워둬라 */
+    align-items: center;
+    display: flex;
+}
+
+.todos__name{
+    height: 36px;
+    line-height: 36px;
+}
+
+.todos__delete{
+    background-image: url(assets/icons/delete.svg);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.todos__add{
+    background-image: url(assets/icons/add_circle.svg);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.todos__input{
+    width: 100%;
+    border: 0;
+    outline: 0;
+}
+
+.footer{
+    color: white;
+    background-color: thistle;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
