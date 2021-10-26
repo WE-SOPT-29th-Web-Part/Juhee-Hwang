@@ -80,7 +80,6 @@ button{
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    margin: auto;
     max-width: 1728px;
 }
 
@@ -100,25 +99,24 @@ button{
     cursor: pointer;
 }
 
-.nav__trending-icon{
-    background-image: url(/Juhee-Hwang/1_velog-clone/assets/icons/trending-up.svg);
+.nav__trending-icon, 
+.nav_latest-icon{
     width: 24px;
     height: 24px;
     display: inline-block;
     margin-right: 7px;
+}
+
+.nav__trending-icon{
+    background-image: url(/Juhee-Hwang/1_velog-clone/assets/icons/trending-up.svg);
 }
 
 .nav__latest-icon{
     background-image: url(/Juhee-Hwang/1_velog-clone/assets/icons/clock.svg);
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    margin-right: 7px;
 }
 
 .nav__timefilter{
     background-color: lightgray;
-    position: relative;
     display: flex;
     align-items: center;
     text-align: center;

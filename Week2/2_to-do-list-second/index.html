@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To-Do-List</title>
     <link rel="stylesheet", href="style.css">
+    <script src="main.js"></script>
+    
 </head>
 <body>
-    <!-- HTML 구조 짜기, Style 입히기, JS 기능 추가하기 -->
-    <!--HTML 마크업 semantic tag-->
-    <!-- header+nav+main+footer -->
     <header class="header">
         <h1 class="header__logo">To Do List</h1>
     </header>
@@ -22,18 +21,7 @@
     <main class="todos">
         <section class="todos__today">
             <h2 class="todos__hedaer">오늘 할 일</h2>
-            <!-- ul : unOrdered List -->
-            <!-- ol : Ordered List -->
-            <!-- li : List -->
             <ul class="todos__items">
-                <li class="todos__item">
-                    <span class="todos__name">HTML 공부</span>
-                    <button class="todos__delete"></button>
-                </li>
-                <li class="todos__item">
-                    <span class="todos__name">CSS 공부</span>
-                    <button class="todos__delete"></button>
-                </li>
             </ul>
             <input class="todos__input" type="text">
             <div class="todos__btn-wrapper"> 
@@ -43,14 +31,6 @@
         <section class="todos__tomorrow">
             <h2 class="todos__header">내일 할 일</h2>
             <ul class="todos__items">
-                <li class="todos__item">
-                    <span class="todos__name">HTML 공부</span>
-                    <button class="todos__delete"></button>
-                </li>
-                <li class="todos__item">
-                    <span class="todos__name">CSS 공부</span>
-                    <button class="todos__delete"></button>
-                </li>
             </ul>
             <input class="todos__input" type="text">
             <div class="todos__btn-wrapper"> 
@@ -59,16 +39,6 @@
         </section>
 
     </main>
-    <footer></footer>
-    <!-- div>div*5 -->
-    <!-- <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div> -->
-
-    <!--Emmet Abbreviation-->
+    <footer>To-Do-List</footer>
 </body>
 </html>
