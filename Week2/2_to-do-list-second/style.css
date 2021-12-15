@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 0 15px;
+    width: 100%;
+}
+
+li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button{
+    cursor: pointer;
+    border: 0; 
+    background-color: whitesmoke;
+}
+
+.header,
+.footer{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 32px;
+    text-align: center;
+    color: white;
+    background-color: pink;
+}
+
+.header__logo{
+    font-size: 32px;
+    text-align: center;
+    /* 수평 정렬 방법 */
+    height: 50px;
+    line-height: 50px;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.options{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.options__btn {
+    background-color: gray;
+    border: 0;
+    margin-right: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.todos {
+    background-color: whitesmoke;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.todos__today,
+.todos__tomorrow{
+    border-right: 1px solid darkgray;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todos__items{
+    flex-grow: 1;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.todos__item{
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    height: 36px;
+    align-items: center;
+    display: flex;
+}
+
+.todos__name{
+    height: 36px;
+    line-height: 36px;
+}
+
+.todos__delete{
+    background-image: url(assets/icons/delete.svg);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.todos__add{
+    background-image: url(assets/icons/add_circle.svg);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.todos__input{
+    width: 100%;
+    border: 0;
+    outline: 0;
+}
+
+
+
+input{
+    width: 100%;
+    outline: 0;
+    border: 0;
+}
