@@ -40,7 +40,9 @@ const Write = () => {
   };
 
   const handleDataChange = (key, value) => {
-    // title, body, summary, series, thumbnail의 변화에 적용ㅐ
+    // key: title, body, summary, thumbnail
+    // value: e.target.value
+    // title, body, summary, series, thumbnail의 변화에 적용
     const tempArticleData = { ...articleData };
     tempArticleData[key] = value;
     setArticleData(tempArticleData);
