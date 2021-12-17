@@ -5,9 +5,9 @@ import PublishLeftScreen from "./PublishLeftScreen";
 import PublishRightScreen from "./PublishRightScreen";
 
 const PublishScreen = ({
-  summary,
-  onDataChange,
-  createArticle,
+  articleData,
+  handleDataChange,
+  createOrUpdateArticle,
   isPublishScreen,
   setIsPublishScreen,
 }) => {
@@ -38,10 +38,13 @@ const PublishScreen = ({
   return (
     <StyledRoot isPublishScreen={isPublishScreen}>
       <StyledWrapper>
-        <PublishLeftScreen onDataChange={onDataChange} summary={summary} />
+        <PublishLeftScreen
+          handleDataChange={handleDataChange}
+          articleData={articleData}
+        />
         <StyledCenterLine />
         <PublishRightScreen
-          createArticle={createArticle}
+          createOrUpdateArticle={createOrUpdateArticle}
           setIsPublishScreen={setIsPublishScreen}
         />
       </StyledWrapper>

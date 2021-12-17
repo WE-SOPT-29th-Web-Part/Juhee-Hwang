@@ -10,9 +10,8 @@ import { client } from "../libs/api";
 import { colors } from "../libs/constants/colors";
 
 const Write = () => {
-  const navigate = useNavigate();
-
   const location = useLocation();
+  const navigate = useNavigate();
   const article = location.state;
 
   const [articleData, setArticleData] = useState(
@@ -27,22 +26,19 @@ const Write = () => {
 
   const [isPublishScreen, setIsPublishScreen] = useState(false);
 
-  const createArticle = async () => {
-    // 수정 중일때 출간하기를 누르면 update 시키고, -> patch
-    // 새글작성중일때 출간하기를 누르면 post 시킨다.
+  const createOrUpdateArticle = async () => {
     if (article) {
-      await client.patch(`article/${article.id}`, articleData);
+      await client.patch(`/article/${article.id}`, articleData);
       navigate(`/article/${article.id}`, { state: articleData });
       return;
     }
+
     await client.post("/article", articleData);
     navigate("/");
   };
 
   const handleDataChange = (key, value) => {
-    // key: title, body, summary, thumbnail
-    // value: e.target.value
-    // title, body, summary, series, thumbnail의 변화에 적용
+    // title, body, summary, series, thumbnail의 변화에 적용ㅐ
     const tempArticleData = { ...articleData };
     tempArticleData[key] = value;
     setArticleData(tempArticleData);
@@ -56,7 +52,7 @@ const Write = () => {
   const handleArrDataRemove = (key, innerText) => {
     const tempArticleData = { ...articleData };
     tempArticleData[key] = tempArticleData[key].filter(
-      (item) => item !== innerText
+      (el) => el !== innerText
     );
     setArticleData(tempArticleData);
   };
@@ -81,9 +77,9 @@ const Write = () => {
       />
       <ArticleFooter setIsPublishScreen={setIsPublishScreen} />
       <PublishScreen
-        summary={articleData.summary}
-        onDataChange={handleDataChange}
-        createArticle={createArticle}
+        articleData={articleData}
+        handleDataChange={handleDataChange}
+        createOrUpdateArticle={createOrUpdateArticle}
         isPublishScreen={isPublishScreen}
         setIsPublishScreen={setIsPublishScreen}
       />
@@ -110,3 +106,4 @@ const StyledMiddleLine = styled.div`
   background-color: ${colors.lightGray};
   margin: 24px 0;
 `;
+
