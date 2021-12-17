@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { imageClient } from "../../../libs/api";
 import { colors } from "../../../libs/constants/colors";
+import ImgWrapper from "../../common/ImgWrapper";
 
-const PublishLeftScreen = ({ summary, onDataChange }) => {
+const PublishLeftScreen = ({ articleData, handleDataChange }) => {
   const MAX_NUM = 150;
+  const { summary, thumbnail } = articleData;
+  const [preViewImage, setPreViewImage] = useState(thumbnail);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -19,30 +22,31 @@ const PublishLeftScreen = ({ summary, onDataChange }) => {
       const roomSummary = value.slice(summary.length, summary.length + room);
       // 기본 144자에 잘라온 6글자를 더함
       const fullSummary = summary + roomSummary;
-      onDataChange("summary", fullSummary);
+      handleDataChange("summary", fullSummary);
       return;
     }
-    onDataChange("summary", value);
+    handleDataChange("summary", value);
   };
 
   const handleImageChange = async (e) => {
-    console.log(e.target.files[0]);
-    // 서버에 이미지를 보내고(post), 정제된 이미지 url을 받아올 것이다.(get)
     const formData = new FormData();
     const imageFile = e.target.files[0];
     formData.append("file", imageFile);
     const imageResponse = await imageClient.post("", formData);
-    console.log(`imageResponse`, imageResponse);
     const imageUrl = imageResponse.data.url;
-    // 이 url을 articleData의 thumbnail에 넣어서 post할 것!
-    console.log(`imageUrl`, imageUrl);
-    onDataChange("thumbnail", imageUrl);
+    setPreViewImage(imageUrl);
+    handleDataChange("thumbnail", imageUrl);
   };
 
   return (
     <StyledRoot>
       <h3>포스트 미리보기</h3>
       <input type="file" onChange={handleImageChange} />
+      {preViewImage && (
+        <ImgWrapper ratio="56%">
+          <img src={preViewImage} alt="thumbnail" />
+        </ImgWrapper>
+      )}
       <textarea
         placeholder="당신의 포스트를 짧게 소개해보세요."
         value={summary}

@@ -39,7 +39,6 @@ const StyledRoot = styled.nav`
   justify-content: center;
   margin: 72px 0;
   position: relative;
-
   & > a {
     width: 128px;
     height: 48px;
@@ -56,7 +55,6 @@ const StyledRoot = styled.nav`
     color: ${({ isArticleBottomLine }) =>
       isArticleBottomLine && colors.mainGreen};
   }
-
   & > a:nth-child(2) {
     color: ${({ isArticleBottomLine }) =>
       !isArticleBottomLine && colors.mainGreen};

@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 import { ReactComponent as ArrowLeftIcon } from "../../assets/icons/arrow_left.svg";
 import { colors } from "../../libs/constants/colors";
@@ -39,7 +39,6 @@ const StyledLeft = styled.button`
   display: flex;
   align-items: center;
   background-color: white;
-
   & > svg {
     margin-right: 8px;
   }

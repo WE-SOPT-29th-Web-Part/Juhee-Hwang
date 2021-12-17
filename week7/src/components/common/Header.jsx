@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg";
 import { ReactComponent as ArrowDropDownImage } from "../../assets/icons/arrow_drop_down.svg";
 import { colors } from "../../libs/constants/colors";
-import { useHistory, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import profileImg from "../../assets/images/profile.png";
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
     <StyledRoot>
       <StyledLeft onClick={() => navigate("/")}>
         <div></div>
-        <span>web.log</span>
+        <span>sopt.log</span>
       </StyledLeft>
       <StyledRight>
         <SearchIcon />
@@ -50,7 +50,6 @@ const StyledRight = styled.div`
     margin-right: 12px;
     cursor: pointer;
   }
-
   button {
     width: 97px;
     height: 32px;

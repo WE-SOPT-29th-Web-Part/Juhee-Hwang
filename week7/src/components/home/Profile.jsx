@@ -13,18 +13,18 @@ const Profile = () => {
         <img src={profileImg} alt="profile" />
         <div>
           <h3>황주희</h3>
-          <h4>칭찬받고 싶을 나이</h4>
+          <h4>아임줄리아</h4>
         </div>
       </StyledProfile>
       <StyledCenterLine></StyledCenterLine>
       <StyledContact>
-        <a href="https://github.com/euijinkk" target="blank">
+        <a href="https://github.com/Juhee-Hwang" target="blank">
           <GithubIcon fill="lightGray" />
         </a>
-        <a href="https://www.speechtime.co.kr/" target="blank">
+        <a href="https://2runzzal.com/uploads/zpicture/org/d2cf5c4811c675ae485fe3e03aa2b6adbbd3740ffdd59bec0f7d26e7409c08a4.jpg" target="blank">
           <HomeIcon fill="lightGray" />
         </a>
-        <a href="/">
+        <a href="https://mblogthumb-phinf.pstatic.net/MjAyMDA3MTBfNCAg/MDAxNTk0Mzg5OTg3MDU4.H5oS7H39AZ29Z17P_ZUIKlEswGu3f95kFsBKfTe_Ei4g.MD8ucAVsBBG1q2XB7bNZB6NnKqKGIjHL0Sl_TxVDIkIg.JPEG.mahz3014/52.jpg?type=w800" target="blank">
           <MailIcon fill="lightGray" />
         </a>
       </StyledContact>

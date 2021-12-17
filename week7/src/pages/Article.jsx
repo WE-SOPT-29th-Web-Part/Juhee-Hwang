@@ -1,41 +1,82 @@
 import React from "react";
 import { useLocation } from "react-router";
-import ArticleOptions from "../components/article/ArticleOptions";
 import Header from "../components/common/Header";
-import ImgWrapper from "../components/common/ImgWrapper";
-import { StyledTag } from "../components/home/ArticleCard";
 import Profile from "../components/home/Profile";
+import styled from "styled-components";
+import { colors } from "../libs/constants/colors";
+import ArticleOption from "../components/article/ArticleOption";
+import { StyledTag } from "../components/write/ArticleTag";
+import ImgWrapper from "../components/common/ImgWrapper";
 
 const Article = () => {
-  // 데이터를 넘기는 방법 -> Link
-  // 데이터를 받는 방법 -> useLocation
   const location = useLocation();
   const article = location.state;
-  const { id, title, body, thumbnail, date, tags } = article;
+  const { title, body, tags, thumbnail, date } = article;
   return (
-    <div>
+    <StyledRoot>
       <Header />
-      <h1>{title}</h1>
-      <ArticleOptions article={article} />
-      <div>
-        <span>김의진</span>
-        <span> · </span>
-        <span>{date}</span>
-      </div>
-      <StyledTag>
-        {tags.map((tag) => (
-          <span key={tag}>{tag}</span>
-        ))}
-      </StyledTag>
-      {thumbnail && (
-        <ImgWrapper ratio="50%">
-          <img src={thumbnail} alt="thumbnail" />
-        </ImgWrapper>
-      )}
-      <div>{body}</div>
-      <Profile />
-    </div>
+      <StyledWrapper>
+        <h1>{title}</h1>
+        <ArticleOption article={article} />
+        <StyledInformation>
+          <span>황주희</span>
+          <span>·</span>
+          <span>{date}</span>
+        </StyledInformation>
+        <StyledTags>
+          {tags && tags.map((tag) => <StyledTag key={tag}>{tag}</StyledTag>)}
+        </StyledTags>
+        {thumbnail && (
+          <ImgWrapper ratio="56%">
+            <img src={thumbnail} alt="thumbnail" />
+          </ImgWrapper>
+        )}
+        <StyledContents>{body}</StyledContents>
+        <Profile />
+      </StyledWrapper>
+    </StyledRoot>
   );
 };
 
 export default Article;
+
+const StyledRoot = styled.div`
+  width: 100%;
+  /* height: 100%; */
+  margin: auto;
+  background-color: ${colors.mainWhite};
+`;
+
+const StyledWrapper = styled.div`
+  max-width: 768px;
+  width: 100%;
+  margin: auto;
+  & > h1 {
+    margin-top: 88px;
+    margin-bottom: 32px;
+    font-size: 36px;
+    font-weight: 800;
+  }
+`;
+
+const StyledInformation = styled.div`
+  margin-top: 24px;
+  & > span:nth-child(1) {
+    color: ${colors.darkBlack};
+    font-weight: bold;
+  }
+  & > span:nth-child(2) {
+    margin: 0 8px;
+  }
+  & > span:nth-child(3) {
+    color: ${colors.lightGray};
+  }
+`;
+
+const StyledTags = styled.div`
+  margin-top: 14px;
+`;
+
+const StyledContents = styled.div`
+  margin-top: 80px;
+`;
